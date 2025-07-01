@@ -28,3 +28,7 @@ def create_item(item: Item):
 @app.put("/items/{item_id}") 
 def edit_item(item_id: int, item: Item):
     return {"id": item_id, "request body": item}
+
+@app.delete("/items/{item_id}") # New DELETE endpoint added
+def delete_item(item_id: int):
+    return {"message": f"Item {item_id} deleted"}
